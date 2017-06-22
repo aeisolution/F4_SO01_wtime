@@ -8,6 +8,10 @@ namespace wtime.Models
 {
     public class WTimeDBContext : DbContext
     {
+        public WTimeDBContext() : base("DefaultConnection")
+        {
+        }
+
         public virtual DbSet<Operatore> Operatori { get; set; }
         public virtual DbSet<FasciaOraria> FasceOrarie { get; set; }
 

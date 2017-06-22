@@ -84,6 +84,8 @@ namespace wtime.Controllers
             {
                 return HttpNotFound();
             }
+
+            ViewBag.selectProfiliOrari = new SelectList(db.ProfiliOrari, "IdProfiloOrario", "Nome", operatore.IdProfiloOrario);
             return View(operatore);
         }
 
@@ -94,12 +96,16 @@ namespace wtime.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Operatore operatore)
         {
+            operatore.ProfiloOrario = db.ProfiliOrari
+                                        .Find(operatore.IdProfiloOrario);
+
             if (ModelState.IsValid)
             {
                 db.Entry(operatore).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.IdProfiloOrario = new SelectList(db.ProfiliOrari, "IdProfiloOrario", "Nome");
             return View(operatore);
         }
 
