@@ -185,6 +185,7 @@
     <Compile Include="Models\WTimeDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\FasciaOrariaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
@@ -1174,6 +1175,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\Breadcrumb.cshtml" />
+    <Content Include="Views\Shared\Pagehead.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Migrations\" />

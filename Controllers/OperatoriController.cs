@@ -10,6 +10,7 @@ using wtime.Models;
 
 namespace wtime.Controllers
 {
+    [Authorize]
     public class OperatoriController : Controller
     {
         private WTimeDBContext db = new WTimeDBContext();
@@ -85,7 +86,9 @@ namespace wtime.Controllers
                 return HttpNotFound();
             }
 
-            ViewBag.selectProfiliOrari = new SelectList(db.ProfiliOrari, "IdProfiloOrario", "Nome", operatore.IdProfiloOrario);
+            ViewBag.selectProfiliOrari = new SelectList(db.ProfiliOrari, 
+                                                        "IdProfiloOrario", "Nome", 
+                                                        operatore.IdProfiloOrario);
             return View(operatore);
         }
 

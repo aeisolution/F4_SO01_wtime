@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using wtime.Models;
+using wtime.ViewModels;
 
 namespace wtime.Controllers
 {
@@ -123,5 +124,36 @@ namespace wtime.Controllers
             }
             base.Dispose(disposing);
         }
+
+        // -----------------------------------
+        // GESTIONE FASCE ORARIE
+        [HttpPost]
+        public ActionResult FasciaAdd(FasciaOrariaViewModel fasciaOrariaVM)
+        {
+            var profiloOrario = db.ProfiliOrari.Find(fasciaOrariaVM.IdProfiloOrario);
+            var fascia = new FasciaOraria {
+                Codice = fasciaOrariaVM.Codice,
+                B1_Inizio_Ora = fasciaOrariaVM.B1_Inizio_Ora,
+                B1_Inizio_Minuti = fasciaOrariaVM.B1_Inizio_Minuti,
+                B1_Fine_Ora = fasciaOrariaVM.B1_Fine_Ora,
+                B1_Fine_Minuti = fasciaOrariaVM.B1_Fine_Minuti,
+                B2_Inizio_Ora = fasciaOrariaVM.B2_Inizio_Ora,
+                B2_Inizio_Minuti = fasciaOrariaVM.B2_Inizio_Minuti,
+                B2_Fine_Ora = fasciaOrariaVM.B2_Fine_Ora,
+                B2_Fine_Minuti = fasciaOrariaVM.B2_Fine_Minuti
+            };
+
+            profiloOrario.FasceOrarie.Add(fascia);
+
+            if (ModelState.IsValid)
+            {
+                db.Entry(profiloOrario).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Details", new { id = fasciaOrariaVM.IdProfiloOrario });
+            }
+
+            return View(profiloOrario);
+        }
+
     }
 }

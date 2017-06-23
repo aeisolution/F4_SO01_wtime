@@ -1,7 +1,12 @@
 ﻿@model wtime.Models.Operatore
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Operatori";
+    ViewBag.Subtitle = "Nuovo";
+
+    ViewBag.controller = ViewContext.RouteData.GetRequiredString("controller");
+    ViewBag.action = ViewContext.RouteData.GetRequiredString("action");
+
     Layout = "~/Views/Shared/_Masterpage.cshtml";
 }
 

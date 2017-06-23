@@ -52,7 +52,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IdProfiloOrario, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("IdProfiloOrario", (SelectList)ViewBag.selectProfiliOrari, new { @class = "form-control" })
+                @Html.DropDownList("IdProfiloOrario", 
+                                    (SelectList)ViewBag.selectProfiliOrari, 
+                                    new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdProfiloOrario, "", new { @class = "text-danger" })
             </div>
         </div>
