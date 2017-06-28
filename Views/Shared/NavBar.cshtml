@@ -102,14 +102,11 @@
                 </a>
                 <ul class="dropdown-menu">
                     <!-- Menu Footer-->
-                    <li class="user-footer">
-                        <div class="pull-left">
-                            <a href="#" class="btn btn-default btn-flat">Profile</a>
-                        </div>
-                        <div class="pull-right">
-                            <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                        </div>
+                    <li>
+                        @Html.ActionLink("Profilo Utente", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
                     </li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/Account/LogOff">Esci</a></li>
                 </ul>
             </li>
             <!-- Control Sidebar Toggle Button -->
@@ -119,4 +116,3 @@
         </ul>
     </div>
 </nav>
-

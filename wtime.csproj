@@ -1181,6 +1181,9 @@
     <Content Include="Views\Shared\Breadcrumb.cshtml" />
     <Content Include="Views\Shared\Pagehead.cshtml" />
     <Content Include="Views\FasceOrarie\Edit.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Account\Login_new.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
