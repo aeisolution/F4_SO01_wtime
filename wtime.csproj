@@ -174,9 +174,20 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OperatoriController.cs" />
     <Compile Include="Controllers\ProfiliOrariController.cs" />
+    <Compile Include="Controllers\RichiesteController.cs" />
+    <Compile Include="Controllers\TipoRichiesteController.cs" />
+    <Compile Include="Controllers\TipoStatusController.cs" />
     <Compile Include="Controllers\TurniController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706280914310_richiesta.cs" />
+    <Compile Include="Migrations\201706280914310_richiesta.Designer.cs">
+      <DependentUpon>201706280914310_richiesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706281024456_tiporichiesta.cs" />
+    <Compile Include="Migrations\201706281024456_tiporichiesta.Designer.cs">
+      <DependentUpon>201706281024456_tiporichiesta.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -184,6 +195,8 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Operatore.cs" />
     <Compile Include="Models\Orario.cs" />
+    <Compile Include="Models\Parametri.cs" />
+    <Compile Include="Models\Richiesta.cs" />
     <Compile Include="Models\WTimeDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -1118,6 +1131,7 @@
     <Content Include="Content\plugins\datatables\extensions\TableTools\Readme.md" />
     <Content Include="Content\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="Content\plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="Models\WTime.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1184,8 +1198,30 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Account\Login_new.cshtml" />
+    <Content Include="Views\TipoRichieste\Create.cshtml" />
+    <Content Include="Views\TipoRichieste\Delete.cshtml" />
+    <Content Include="Views\TipoRichieste\Details.cshtml" />
+    <Content Include="Views\TipoRichieste\Edit.cshtml" />
+    <Content Include="Views\TipoRichieste\Index.cshtml" />
+    <Content Include="Views\TipoStatus\Create.cshtml" />
+    <Content Include="Views\TipoStatus\Delete.cshtml" />
+    <Content Include="Views\TipoStatus\Details.cshtml" />
+    <Content Include="Views\TipoStatus\Edit.cshtml" />
+    <Content Include="Views\TipoStatus\Index.cshtml" />
+    <Content Include="Views\Richieste\Create.cshtml" />
+    <Content Include="Views\Richieste\Delete.cshtml" />
+    <Content Include="Views\Richieste\Details.cshtml" />
+    <Content Include="Views\Richieste\Edit.cshtml" />
+    <Content Include="Views\Richieste\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706280914310_richiesta.resx">
+      <DependentUpon>201706280914310_richiesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706281024456_tiporichiesta.resx">
+      <DependentUpon>201706281024456_tiporichiesta.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

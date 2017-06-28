@@ -1,0 +1,122 @@
+﻿@model wtime.Models.Richiesta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Richiesta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Operatore.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Operatore.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoRichiesta.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoRichiesta.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInizio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataInizio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataFine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Giornaliera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Giornaliera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OraInizio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OraInizio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinutiInizio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinutiInizio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OraFine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OraFine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinutiFine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinutiFine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsernameValidatore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsernameValidatore)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdRichiesta }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

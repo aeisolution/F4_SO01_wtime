@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="wtime.Models.Richiesta">
+    <Position X="3.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMQAgAAEAAEBIAAAAAACAAACAAAAAgAAAAAAAIFAIIg=</HashCode>
+      <FileName>Models\Richiesta.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Status" />
+      <Property Name="Operatore" />
+      <Property Name="TipoRichiesta" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="wtime.Models.TipoRichiesta" Collapsed="true">
+    <Position X="6.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAEAAAg=</HashCode>
+      <FileName>Models\Parametri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wtime.Models.TipoStatus" Collapsed="true">
+    <Position X="0.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAA=</HashCode>
+      <FileName>Models\Parametri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="wtime.Models.Operatore">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAIAAEAAAgAAABAAAAAAAAAAAAIAAAAEAAAA=</HashCode>
+      <FileName>Models\Operatore.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ProfiloOrario" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="wtime.Models.ProfiloOrario">
+    <Position X="3.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAACAAAAAAAAAABAAAAEAAAA=</HashCode>
+      <FileName>Models\Orario.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="FasceOrarie" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="wtime.Models.FasciaOraria">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAJgIAAAAoBAAAAAAAAAAAAQAAAAAAAAEQAA=</HashCode>
+      <FileName>Models\Orario.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ProfiloOrario" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<wtime.Models.Richiesta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Richiedente
+        </th>
+        <th>
+            Tipo Richiesta
+        </th>
+        <th>
+            Inizio - Fine
+        </th>
+        <th>
+            Stato
+        </th>
+        <th>
+            Data Stato
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Operatore.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoRichiesta.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataInizio) 
+            @Html.DisplayFor(modelItem => item.OraInizio):
+            @Html.DisplayFor(modelItem => item.MinutiInizio)
+            -
+            @Html.DisplayFor(modelItem => item.DataFine)
+            @Html.DisplayFor(modelItem => item.OraFine):
+            @Html.DisplayFor(modelItem => item.MinutiFine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataStatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdRichiesta }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdRichiesta }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdRichiesta })
+        </td>
+    </tr>
+}
+
+</table>
