@@ -21,6 +21,9 @@ namespace wtime.Models
         [Key]
         public string Codice { get; set; }
 
+        public int IdProfiloOrario { get; set; }
+        public virtual ProfiloOrario ProfiloOrario { get; set; }
+
         // Blocco Orario N.1
         public int B1_Inizio_Ora { get; set; }
         public int B1_Inizio_Minuti { get; set; }

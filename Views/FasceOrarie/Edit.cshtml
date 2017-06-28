@@ -1,0 +1,92 @@
+﻿@model wtime.Models.FasciaOraria
+
+@{
+    ViewBag.Title = "FasciaEdit";
+    Layout = "~/Views/Shared/_Masterpage.cshtml";
+}
+
+  <!-- Form Add Fascia Oraria box -->
+<div class="box">
+    <div class="box-header with-border">
+        <h3 class="box-title">Fascia Oraria Modifica - @Html.DisplayFor(m => m.ProfiloOrario.Nome)</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fa fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <div class="box-body">
+        <form action="/FasceOrarie/FasciaEdit" method="POST" class="form-horizontal">
+            @Html.HiddenFor(model => model.Codice)
+            @Html.HiddenFor(model => model.IdProfiloOrario)
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Codice</label>
+                <div class="col-sm-10">
+                    @Html.DisplayFor(model => model.Codice)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Fascia 1</label>
+                <div class="col-sm-2">
+                    @Html.DropDownList("B1_Inizio_Ora", 
+                                (SelectList)ViewBag.selectB1_Inizio_Ora, 
+                                new { @class = "form-control" } )
+                </div>
+                <div class="col-sm-2">
+                    @Html.DropDownList("B1_Inizio_Minuti", (SelectList)ViewBag.selectB1_Inizio_Minuti, new { @class = "form-control" })
+                </div>
+                <div class="col-sm-offset-2 col-sm-2">
+                    @Html.DropDownList("B1_Fine_Ora",
+                                (SelectList)ViewBag.selectB1_Fine_Ora,
+                                new { @class = "form-control" })
+
+                </div>
+                <div class="col-sm-2">
+                    @Html.DropDownList("B1_Fine_Minuti",
+                                (SelectList)ViewBag.selectB1_Fine_Minuti,
+                                new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Fascia 2</label>
+                <div class="col-sm-2">
+                    @Html.DropDownList("B2_Inizio_Ora",
+                                (SelectList)ViewBag.selectB2_Inizio_Ora,
+                                new { @class = "form-control" })
+                </div>
+                <div class="col-sm-2">
+                    @Html.DropDownList("B2_Inizio_Minuti", (SelectList)ViewBag.selectB2_Inizio_Minuti, new { @class = "form-control" })
+                </div>
+                <div class="col-sm-offset-2 col-sm-2">
+                    @Html.DropDownList("B2_Fine_Ora",
+                                (SelectList)ViewBag.selectB2_Fine_Ora,
+                                new { @class = "form-control" })
+
+                </div>
+                <div class="col-sm-2">
+                    @Html.DropDownList("B2_Fine_Minuti",
+                                (SelectList)ViewBag.selectB2_Fine_Minuti,
+                                new { @class = "form-control" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Sign in</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- /.box-body -->
+</div>
+<!-- /.box -->
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

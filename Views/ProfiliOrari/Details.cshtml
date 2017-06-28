@@ -68,8 +68,8 @@
                             @Html.DisplayFor(modelItem => item.B2_Fine_Ora):@Html.DisplayFor(modelItem => item.B2_Fine_Minuti)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "FasciaEdit", new { id = item.Codice }) |
-                            @Html.ActionLink("Delete", "FasciaDelete", new { id = item.Codice })
+                            @Html.ActionLink("Edit","Edit", new { controller = "FasceOrarie", id = item.Codice })
+                            @Html.ActionLink("Delete", "Delete", new { controller = "FasceOrarie", id = item.Codice })
                         </td>
                     </tr>
                 }
@@ -103,7 +103,7 @@
         </div>
     </div>
     <div class="box-body">
-        <form action="/ProfiliOrari/FasciaCreate" method="POST" class="form-horizontal">
+        <form action="/FasceOrarie/Create" method="POST" class="form-horizontal">
             @Html.HiddenFor(model => model.IdProfiloOrario)
             <div class="form-group">
                 <label class="col-sm-2 control-label">Codice</label>
