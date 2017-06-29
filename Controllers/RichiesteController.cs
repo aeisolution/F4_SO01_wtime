@@ -40,7 +40,7 @@ namespace wtime.Controllers
         public ActionResult Create()
         {
             ViewBag.IdOperatore = new SelectList(db.Operatori, "Id", "Nome");
-            ViewBag.IdTipoStatus = new SelectList(db.TipoStatus, "IdTipoStatus", "Nome");
+            //ViewBag.IdTipoStatus = new SelectList(db.TipoStatus, "IdTipoStatus", "Nome");
             ViewBag.IdTipoRichiesta = new SelectList(db.TipoRichieste, "IdTipoRichiesta", "Nome");
             return View();
         }
@@ -58,7 +58,10 @@ namespace wtime.Controllers
             richiestaVM.Status = db.TipoStatus.Find(1);
 
             if (tipo.Giornaliero)
+            {
+                richiestaVM.Giornaliera = true;
                 richiestaVM.DataFine = richiestaVM.DataInizio;
+            }
 
             if (ModelState.IsValid)
             {
@@ -84,9 +87,15 @@ namespace wtime.Controllers
             if (richiesta == null)
             {
                 return HttpNotFound();
+            } 
+
+            if(richiesta.IdTipoStatus!=1)
+            {
+                return RedirectToAction("Index");
             }
-            ViewBag.IdOperatore = new SelectList(db.Operatori, "Id", "Nome", richiesta.IdOperatore);
-            ViewBag.IdTipoStatus = new SelectList(db.TipoStatus, "IdTipoStatus", "Nome", richiesta.IdTipoStatus);
+
+            //ViewBag.IdOperatore = new SelectList(db.Operatori, "Id", "Nome", richiesta.IdOperatore);
+            //ViewBag.IdTipoStatus = new SelectList(db.TipoStatus, "IdTipoStatus", "Nome", richiesta.IdTipoStatus);
             ViewBag.IdTipoRichiesta = new SelectList(db.TipoRichieste, "IdTipoRichiesta", "Nome", richiesta.IdTipoRichiesta);
             return View(richiesta);
         }
@@ -98,6 +107,24 @@ namespace wtime.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "IdRichiesta,IdOperatore,DataInizio,DataFine,Giornaliera,OraInizio,MinutiInizio,OraFine,MinutiFine,IdTipoStatus,DataStatus,Note,UsernameValidatore,IdTipoRichiesta")] Richiesta richiesta)
         {
+            /*
+            Richiesta ricDB = db.Richieste.Find(richiesta.IdRichiesta);
+            if (ricDB.IdTipoStatus != 1)
+            {
+                return RedirectToAction("Index");
+            }
+            */
+            var tipo = db.TipoRichieste.Find(richiesta.IdTipoRichiesta);
+            richiesta.DataStatus = DateTime.Now;
+            richiesta.IdTipoStatus = 1;
+            richiesta.Status = db.TipoStatus.Find(1);
+
+            if (tipo.Giornaliero)
+            {
+                richiesta.Giornaliera = true;
+                richiesta.DataFine = richiesta.DataInizio;
+            }
+
             if (ModelState.IsValid)
             {
                 db.Entry(richiesta).State = EntityState.Modified;
@@ -122,6 +149,12 @@ namespace wtime.Controllers
             {
                 return HttpNotFound();
             }
+
+            if (richiesta.IdTipoStatus != 1)
+            {
+                return RedirectToAction("Index");
+            }
+
             return View(richiesta);
         }
 
@@ -131,6 +164,12 @@ namespace wtime.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Richiesta richiesta = db.Richieste.Find(id);
+            if (richiesta.IdTipoStatus != 1)
+            {
+                return RedirectToAction("Index");
+            }
+
+
             db.Richieste.Remove(richiesta);
             db.SaveChanges();
             return RedirectToAction("Index");

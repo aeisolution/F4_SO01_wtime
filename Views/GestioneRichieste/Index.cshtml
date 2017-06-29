@@ -6,9 +6,18 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<form action="/GestioneRichieste/Index" method="GET">
+    <div class="form-inline">
+
+        <div class="form-group">
+            <label>Status</label>
+            @Html.DropDownList("IdTipoStatus", (SelectList)ViewBag.selectStatus, new { @class="form-control" })
+        </div>
+
+        <input type="submit" value="filtra" />
+    </div>
+</form>
+
 <table class="table">
     <tr>
         <th>
@@ -60,15 +69,8 @@
             @Html.DisplayFor(modelItem => item.DataStatus)
         </td>
         <td>
-            @if(item.IdTipoStatus==1) { 
-                @Html.ActionLink("Edit", "Edit", new { id=item.IdRichiesta }) <span>|</span> 
-                @Html.ActionLink("Details", "Details", new { id=item.IdRichiesta }) <span>|</span>
-                @Html.ActionLink("Delete", "Delete", new { id=item.IdRichiesta })
-            } else {
-                <span> Edit |</span>
-                @Html.ActionLink("Details", "Details", new { id = item.IdRichiesta })
-                <span> | Delete</span>
-            }
+            @Html.ActionLink("Edit", "Edit", new { id = item.IdRichiesta }) |
+            @Html.ActionLink("Details", "Details", new { id = item.IdRichiesta }) 
         </td>
     </tr>
 }
