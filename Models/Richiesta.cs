@@ -18,13 +18,19 @@ namespace wtime.Models
         [ForeignKey("IdOperatore")]
         public virtual Operatore Operatore { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0: dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DataInizio { get; set; }
-        public DateTime DataFine { get; set; }
+        [DisplayFormat(DataFormatString = "{0: dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime? DataFine { get; set; }
         public bool Giornaliera { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0: 00}")]
         public int? OraInizio { get; set; }
+        [DisplayFormat(DataFormatString = "{0: 00}")]
         public int? MinutiInizio { get; set; }
+        [DisplayFormat(DataFormatString = "{0: 00}")]
         public int? OraFine { get; set; }
+        [DisplayFormat(DataFormatString = "{0: 00}")]
         public int? MinutiFine { get; set; }
 
         public int IdTipoStatus { get; set; }

@@ -39,12 +39,16 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DataInizio) 
-            @Html.DisplayFor(modelItem => item.OraInizio):
-            @Html.DisplayFor(modelItem => item.MinutiInizio)
+            <strong>
+                @Html.DisplayFor(modelItem => item.OraInizio):
+                @Html.DisplayFor(modelItem => item.MinutiInizio)
+            </strong>
             -
             @Html.DisplayFor(modelItem => item.DataFine)
-            @Html.DisplayFor(modelItem => item.OraFine):
-            @Html.DisplayFor(modelItem => item.MinutiFine)
+            <strong>
+                @Html.DisplayFor(modelItem => item.OraFine):
+                @Html.DisplayFor(modelItem => item.MinutiFine)
+            </strong>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Status.Nome)

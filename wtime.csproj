@@ -189,6 +189,10 @@
     <Compile Include="Migrations\201706281024456_tiporichiesta.Designer.cs">
       <DependentUpon>201706281024456_tiporichiesta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706290643030_richiesta_datafine.cs" />
+    <Compile Include="Migrations\201706290643030_richiesta_datafine.Designer.cs">
+      <DependentUpon>201706290643030_richiesta_datafine.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -1220,6 +1224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706281024456_tiporichiesta.resx">
       <DependentUpon>201706281024456_tiporichiesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706290643030_richiesta_datafine.resx">
+      <DependentUpon>201706290643030_richiesta_datafine.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
